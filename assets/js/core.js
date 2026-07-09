@@ -1,6 +1,6 @@
 
 'use strict';
-const BUILD_ID='NEXUS_ARCHIVE_V9_CORE_FINAL_20260709';
+const BUILD_ID='NEXUS_ARCHIVE_V9_1_SEARCH_UI_FINAL_20260709';
 const SUPABASE_URL='https://nfwkkbghelqhopgnguqp.supabase.co';
 const SUPABASE_KEY='sb_publishable_bXSthGxRHDFYy9p3fb21WQ_su8STJKq';
 const DISPLAY_NAME='진서';
