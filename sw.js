@@ -1,17 +1,17 @@
 'use strict';
-const CACHE_NAME='nexus-v9-1-search-ui-20260709-r1';
+const CACHE_NAME='nexus-v9-2-quality-20260709-r1';
 const APP_SHELL=[
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./assets/css/base.css?v=9.1.1",
-  "./assets/css/portal.css?v=9.1.1",
-  "./assets/css/extensions.css?v=9.1.1",
-  "./assets/css/features.css?v=9.1.1",
-  "./assets/js/core.js?v=9.1.1",
-  "./assets/js/guides.data.js?v=9.1.1",
-  "./assets/js/features.js?v=9.1.1",
-  "./assets/js/app.js?v=9.1.1",
+  "./assets/css/base.css?v=9.2.0",
+  "./assets/css/portal.css?v=9.2.0",
+  "./assets/css/extensions.css?v=9.2.0",
+  "./assets/css/features.css?v=9.2.0",
+  "./assets/js/core.js?v=9.2.0",
+  "./assets/js/guides.data.js?v=9.2.0",
+  "./assets/js/features.js?v=9.2.0",
+  "./assets/js/app.js?v=9.2.0",
   "./assets/icons/icon-192.png",
   "./assets/icons/icon-512.png",
   "./assets/images/embedded/064bbc1c753d038c.webp",
