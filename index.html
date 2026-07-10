@@ -11,10 +11,11 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png"/>
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png"/>
 <script>try{const t=JSON.parse(localStorage.getItem('nexus-theme')||'"light"');document.documentElement.dataset.theme=t==='dark'?'dark':'light'}catch(_){}</script>
-<link rel="stylesheet" href="assets/css/base.css?v=9.2.0"/>
-<link rel="stylesheet" href="assets/css/portal.css?v=9.2.0"/>
-<link rel="stylesheet" href="assets/css/extensions.css?v=9.2.0"/>
-<link rel="stylesheet" href="assets/css/features.css?v=9.2.0"/>
+<link rel="stylesheet" href="assets/css/base.css?v=9.3.0"/>
+<link rel="stylesheet" href="assets/css/portal.css?v=9.3.0"/>
+<link rel="stylesheet" href="assets/css/extensions.css?v=9.3.0"/>
+<link rel="stylesheet" href="assets/css/features.css?v=9.3.0"/>
+<link rel="stylesheet" href="assets/css/v93.css?v=9.3.0"/>
 </head>
 <body>
 <div class="sidebarveil" onclick="toggleSidebar(false)"></div>
@@ -30,8 +31,8 @@
 
 
 
-<button class="navbtn active" data-page="home" onclick="navigate('home')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>홈</button><button class="navbtn" data-page="stocks" onclick="navigate('stocks')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 9 12l4 4 7-8"/><path d="M14 8h6v6"/></svg></span>주식 인텔리전스</button><button class="navbtn" data-page="finance" onclick="navigate('finance')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 9h16"/><path d="M8 4v6M16 4v6"/><path d="M8 14h3M8 17h6"/></svg></span>거래·재무 기록</button><button class="navbtn" data-page="fitness" onclick="navigate('fitness')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>운동·식단·인바디</button><button class="navbtn" data-page="insights" onclick="navigate('insights')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/></svg></span>데이터 인사이트</button><button class="navbtn" data-page="guides" onclick="navigate('guides')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Z"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8Z"/></svg></span>원스휴먼 공략페이지</button><button class="navbtn" data-page="fivem" onclick="navigate('fivem')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-5 6 5 6M16 6l5 6-5 6M14 4l-4 16"/></svg></span>FiveM 개발실</button><button class="navbtn" data-page="system" onclick="navigate('system')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></span>시스템 센터</button><button class="navbtn" data-page="playlist" onclick="navigate('playlist')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="m10 8 6 4-6 4Z"/></svg></span>플레이리스트</button></nav>
-<div class="sidefoot">NEXUS ARCHIVE V9.2<br/>진서의 자산·리서치·기록 통합 포털</div>
+<button class="navbtn active" data-page="home" onclick="navigate('home')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>홈</button><button class="navbtn" data-page="stocks" onclick="navigate('stocks')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 9 12l4 4 7-8"/><path d="M14 8h6v6"/></svg></span>주식 인텔리전스</button><button class="navbtn" data-page="finance" onclick="navigate('finance')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 9h16"/><path d="M8 4v6M16 4v6"/><path d="M8 14h3M8 17h6"/></svg></span>거래·재무 기록</button><button class="navbtn" data-page="fitness" onclick="navigate('fitness')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>운동·식단·인바디</button><button class="navbtn" data-page="guides" onclick="navigate('guides')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Z"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8Z"/></svg></span>원스휴먼 공략페이지</button><button class="navbtn" data-page="fivem" onclick="navigate('fivem')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-5 6 5 6M16 6l5 6-5 6M14 4l-4 16"/></svg></span>FiveM 개발실</button><button class="navbtn" data-page="system" onclick="navigate('system')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></span>시스템 센터</button><button class="navbtn" data-page="playlist" onclick="navigate('playlist')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="m10 8 6 4-6 4Z"/></svg></span>플레이리스트</button></nav>
+<div class="sidefoot">NEXUS ARCHIVE V9.3<br/>진서의 자산·리서치·기록 통합 포털</div>
 </aside>
 <div class="workspace">
 <header class="topbar">
@@ -117,7 +118,7 @@
 <button class="quick" onclick="openProtectedAnchor('finance','transactionEditor')"><b>＋</b><span>거래 입력</span></button>
 <button class="quick" onclick="openProtectedAnchor('finance','photoAutoInput')"><b>▧</b><span>사진 자동 입력</span></button>
 <button class="quick" onclick="navigate('fivem')"><b>5M</b><span>FiveM 개발실</span></button>
-<button class="quick" onclick="navigate('insights')"><b>◎</b><span>오늘의 인사이트</span></button>
+<button class="quick" onclick="navigate('fitness')"><b>●</b><span>운동·인바디 기록</span></button>
 </div>
 </article>
 </div>
@@ -189,14 +190,14 @@
 </div>
 </section>
 <section class="page" id="page-fitness">
-<article class="panel pagehead"><div><div class="eyebrow">BODY &amp; ROUTINE</div><h1>운동·식단·인바디</h1><p>InBody 650 현재 측정 영역과 하단 신체변화 이력을 분리해 기록하고, 최신 변화 흐름에 맞춰 운동·식단 조언을 생성합니다.</p></div></article>
+<article class="panel pagehead"><div><div class="eyebrow">BODY &amp; ROUTINE</div><h1>운동·식단·인바디</h1><p>진서 계정으로 저장한 운동·식단·인바디 기록을 기기와 상관없이 불러오고, 직전 측정과 현재 값을 바로 비교합니다.</p></div><div class="pageactions"><span class="cloud-sync-pill" id="fitnessSyncState" data-status="watch">동기화 확인 중</span></div></article>
 <div class="stack">
-<div class="fitnesshero"><article class="panel contentcard"><div class="eyebrow">LATEST INBODY</div><h2>2026.06.29 기준 신체 상태</h2><div class="fitnessmetrics" id="fitnessMetrics"></div></article><aside class="panel contentcard"><div class="eyebrow">NEXUS BODY SUMMARY</div><h2>상세 한줄 분석</h2><div class="inbodysummary" id="inbodyMainSummary"></div></aside></div>
+<div class="fitnesshero"><article class="panel contentcard"><div class="eyebrow">LATEST INBODY</div><h2 id="latestInbodyTitle">최근 신체 상태</h2><div class="fitnessmetrics" id="fitnessMetrics"></div></article><aside class="panel contentcard"><div class="eyebrow">NEXUS BODY SUMMARY</div><h2>상세 한줄 분석</h2><div class="inbodysummary" id="inbodyMainSummary"></div></aside></div>
 <div class="fitnessforms"><article class="panel fitform"><div class="eyebrow">INBODY OCR</div><h2>InBody 검사지 추가</h2><div class="inbodyupload"><input accept="image/*" id="inbodyInput" multiple="" type="file"/><p style="font-size:10px;color:var(--muted)">여러 검사지를 올리면 검사일별 별도 기록으로 분석합니다.</p><img alt="인바디 미리보기" class="inbodypreview hidden" id="inbodyPreview"/><div class="ocrstatus" id="inbodyOcrStatus">현재값 영역 → 부위별 근육 → 신체변화 영역 순서로 분리 OCR합니다.</div><div class="uncertainbox" id="inbodyUncertain"></div></div></article><article class="panel fitform"><div class="eyebrow">WORKOUT LOG</div><h2>운동 기록</h2><input id="workoutDate" type="date"/><textarea id="workoutNote" placeholder="오늘 운동 내용"></textarea><button class="primary full" onclick="saveWorkout()">운동 기록 저장</button><div class="advice" id="workoutAdvice">최신 인바디 기준 운동 조언이 표시됩니다.</div></article><article class="panel fitform"><div class="eyebrow">DIET LOG</div><h2>식단 기록</h2><input id="dietDate" type="date"/><textarea id="dietNote" placeholder="오늘 식단 내용"></textarea><button class="primary full" onclick="saveDiet()">식단 기록 저장</button><div class="advice" id="dietAdvice">최신 인바디 변화 기준 식단 조언이 표시됩니다.</div></article></div>
 <article class="panel contentcard"><div class="eyebrow">BODY BALANCE VISUAL</div><h2>부위별 근육 균형</h2><div class="bodybalance"><div aria-live="polite" class="silhouette bodyvisual" id="bodyBalanceVisual"></div><div class="bodylabels" id="bodyBalanceLabels"></div></div></article>
 <article class="panel contentcard"><div class="eyebrow">BODY CHANGE</div><h2>신체변화 이력</h2><div style="overflow-x:auto"><table class="trendtable" id="inbodyTrendTable"></table></div></article>
-<article class="panel contentcard"><div class="eyebrow">DETAILED BODY REVIEW</div><h2>인바디 상세 분석</h2><div class="analysisgrid" id="inbodyAnalysisGrid"></div></article>
-<article class="panel contentcard"><div class="eyebrow">FITNESS RECORDS</div><h2>최근 운동·식단 기록</h2><div id="fitnessRecordList"></div></article>
+<article class="panel contentcard"><div class="eyebrow">DETAILED BODY REVIEW</div><h2>인바디 상세 분석</h2><p class="dev-copy">직전 측정 변화 → 근육 균형 → 수분·회복 → 다음 감량 행동 순서로 나눠서 봐요.</p><div class="analysisgrid" id="inbodyAnalysisGrid"></div></article>
+<article class="panel contentcard"><div class="eyebrow">FITNESS RECORDS</div><h2>최근 운동·식단 기록</h2><p class="dev-copy">로그인 상태에서 저장한 기록은 진서 계정 기준으로 동기화되어 다른 PC·노트북에서도 같은 목록을 불러옵니다.</p><div id="fitnessRecordList"></div></article>
 </div>
 </section>
 <section class="page" id="page-fivem">
@@ -269,18 +270,7 @@ vrp_music    0.08 ms    11.2 MiB"></textarea><div class="formactions"><button cl
 </article>
 </div>
 </section>
-<section class="page" id="page-insights">
-<article class="panel pagehead"><div><div class="eyebrow">PERSONAL DATA INSIGHT</div><h1>데이터 인사이트</h1><p>재무·운동·인바디 기록을 합쳐 오늘 바로 실행할 수 있는 행동을 정리합니다. 별도 유료 서비스 없이 브라우저에서 계산해요.</p></div></article>
-<div class="insight-hero panel">
-<div><div class="eyebrow">TODAY ACTIONS</div><h2>진서님의 오늘 액션 3개</h2><p id="insightLead">현재 기록을 불러와 가장 먼저 할 일을 정리해요.</p></div>
-<div class="insight-actions" id="insightActionList"></div>
-</div>
-<div class="insight-grid">
-<article class="panel contentcard"><div class="eyebrow">MONEY</div><h2>지출 흐름</h2><div class="insight-copy" id="insightMoney"></div></article>
-<article class="panel contentcard"><div class="eyebrow">BODY</div><h2>몸 변화</h2><div class="insight-copy" id="insightBody"></div></article>
-<article class="panel contentcard"><div class="eyebrow">ROUTINE</div><h2>기록 습관</h2><div class="insight-copy" id="insightRoutine"></div></article>
-</div>
-</section><section class="page" id="page-guides">
+<section class="page" id="page-guides">
 <article class="panel pagehead"><div><div class="eyebrow">ONCE HUMAN ARCHIVE</div><h1>원스휴먼 공략페이지</h1><p>15개 확장 공략, 검색·필터·즐겨찾기·체크리스트·상세 공략·영상 챕터·용어 도움말을 유지합니다.</p></div></article>
 <div class="panel toolbar"><label class="searchfield">⌕<input id="guideSearch" onkeydown="if(event.key==='Enter')renderGuideCards()" placeholder="공략 검색" type="search"/></label><select id="guideType" onchange="setGuideFilter(this.value)"><option value="all">전체 카테고리</option><option value="beginner">뉴비</option><option value="scenario">시나리오</option><option value="growth">성장 / 장비</option><option value="farming">파밍 / 루트</option><option value="build">빌드</option><option value="tips">꿀팁</option><option value="bookmark">즐겨찾기</option></select><button class="primary" onclick="renderGuideCards()">검색</button></div>
 <div class="filters"><button class="filter active" data-guide-filter="all" onclick="setGuideFilter('all',this)">전체</button><button class="filter" data-guide-filter="beginner" onclick="setGuideFilter('beginner',this)">뉴비</button><button class="filter" data-guide-filter="scenario" onclick="setGuideFilter('scenario',this)">시나리오</button><button class="filter" data-guide-filter="growth" onclick="setGuideFilter('growth',this)">성장·장비</button><button class="filter" data-guide-filter="farming" onclick="setGuideFilter('farming',this)">파밍</button><button class="filter" data-guide-filter="build" onclick="setGuideFilter('build',this)">빌드</button><button class="filter" data-guide-filter="tips" onclick="setGuideFilter('tips',this)">꿀팁</button><button class="filter" data-guide-filter="bookmark" onclick="setGuideFilter('bookmark',this)">★ 즐겨찾기</button></div>
@@ -289,7 +279,7 @@ vrp_music    0.08 ms    11.2 MiB"></textarea><div class="formactions"><button cl
 <section class="page" id="page-guide-detail"><div class="detailshell" id="guideDetail"></div></section>
 <section class="page" id="page-system">
 <article class="panel pagehead system-pagehead"><div><div class="eyebrow">NEXUS SYSTEM CENTER</div><h1>시스템 센터</h1><p>NEXUS 연결 상태, 기능 자가진단, 체감 성능, 백업·복구까지 개발자 콘솔 없이 관리합니다.</p></div><div class="pageactions"><button class="primary" onclick="runSystemHealthCheck()">전체 상태 점검</button><button class="secondary" onclick="runNexusDiagnostics()">기능 자가진단</button><button class="secondary" onclick="measureNexusPerformance()">성능 측정</button></div></article>
-<div class="system-overview panel"><div><div class="eyebrow">SYSTEM HEALTH</div><h2>현재 NEXUS 상태</h2><p id="systemHealthNote">점검 버튼을 누르면 현재 브라우저와 연결 상태를 확인합니다.</p></div><div class="system-build"><span>BUILD</span><strong id="systemBuildId">V9.2 QUALITY</strong><small id="systemLastCheck">아직 점검하지 않음</small></div></div>
+<div class="system-overview panel"><div><div class="eyebrow">SYSTEM HEALTH</div><h2>현재 NEXUS 상태</h2><p id="systemHealthNote">점검 버튼을 누르면 현재 브라우저와 연결 상태를 확인합니다.</p></div><div class="system-build"><span>BUILD</span><strong id="systemBuildId">V9.3 JINSEO</strong><small id="systemLastCheck">아직 점검하지 않음</small></div></div>
 <div class="system-health-grid" id="systemHealthGrid"><div class="empty">전체 상태 점검을 실행하면 Supabase·세션·Finance·stock-ai·OCR·PWA·브라우저 저장소 상태가 표시됩니다.</div></div>
 <article class="panel contentcard diagnostics-card"><div class="sectionhead"><div><div class="eyebrow">NEXUS REGRESSION TEST</div><h2>기능 자가진단</h2><p>공략 데이터, OCR parser, InBody parser, 통합 검색, Finance 중복 비교 같은 핵심 기능을 버튼 한 번으로 검사합니다.</p></div><button class="primary" onclick="runNexusDiagnostics()">자가진단 실행</button></div><div class="diagnostics-grid" id="nexusDiagnosticsGrid"><div class="empty">기능 자가진단을 실행하면 PASS/WARN/FAIL 결과가 표시됩니다.</div></div></article>
 <article class="panel contentcard performance-card"><div class="sectionhead"><div><div class="eyebrow">NEXUS PERFORMANCE</div><h2>실제 체감 성능</h2><p>현재 브라우저의 로딩·클릭 반응·레이아웃 안정성·JS 오류를 측정하고 최근 평균과 비교합니다.</p></div><button class="primary" onclick="measureNexusPerformance()">성능 측정</button></div><div class="performance-grid" id="nexusPerformanceGrid"><div class="empty">성능 측정을 실행하면 현재 페이지의 체감 지표가 표시됩니다.</div></div></article>
@@ -308,11 +298,10 @@ vrp_music    0.08 ms    11.2 MiB"></textarea><div class="formactions"><button cl
 <div class="authmodal" id="authModal" onclick="closeAuthModal(event)"><article class="panel modalcard" onclick="event.stopPropagation()"><div class="modaltop"><div><div class="eyebrow">PRIVATE ACCOUNT</div><h2>NEXUS 로그인</h2></div><button class="closebtn" onclick="closeAuthModal()">×</button></div><div class="authform"><input autocomplete="email" id="loginEmail" onkeydown="if(event.key==='Enter'){event.preventDefault();document.getElementById('loginPassword').focus()}" placeholder="이메일" type="email"/><input autocomplete="current-password" id="loginPassword" onkeydown="if(event.key==='Enter'){event.preventDefault();signIn()}" placeholder="비밀번호" type="password"/><button class="primary" onclick="signIn()">로그인</button></div><div class="authmessage" id="authMessage">Supabase 이메일/비밀번호 계정으로 로그인합니다.</div></article></div>
 <div class="overlay" id="glossaryOverlay" onclick="closeGlossary(event)"><article class="panel glosspanel" onclick="event.stopPropagation()"><div class="modaltop"><div><div class="eyebrow">TERM HELP · 초보자 세부 안내</div><h2 id="glossaryTitle"></h2></div><button class="closebtn" onclick="closeGlossary()">×</button></div><div class="glossary-layout"><div class="glossary-visual" id="glossaryVisual"></div><div class="glossary-copy"><p id="glossarySummary"></p><div class="keysteps" id="glossarySteps"></div><div class="glossary-example" id="glossaryExample"></div><div class="glossary-note" id="glossaryNote"></div></div></div></article></div>
 <div class="toast" id="toast"></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
-<script src="assets/js/core.js?v=9.2.0"></script>
-<script src="assets/js/guides.data.js?v=9.2.0"></script>
-<script src="assets/js/features.js?v=9.2.0"></script>
-<script src="assets/js/app.js?v=9.2.0"></script>
+<script defer src="assets/js/core.js?v=9.3.0"></script>
+<script defer src="assets/js/guides.data.js?v=9.3.0"></script>
+<script defer src="assets/js/features.js?v=9.3.0"></script>
+<script defer src="assets/js/app.js?v=9.3.0"></script>
+<script defer src="assets/js/v93.js?v=9.3.0"></script>
 </body>
 </html>

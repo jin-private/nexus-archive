@@ -1,29 +1,10 @@
 'use strict';
-const CACHE_NAME='nexus-v9-2-quality-20260709-r1';
+const CACHE_NAME='nexus-v9-3-jinseo-20260709-r1';
 const APP_SHELL=[
-  "./",
-  "./index.html",
-  "./manifest.webmanifest",
-  "./assets/css/base.css?v=9.2.0",
-  "./assets/css/portal.css?v=9.2.0",
-  "./assets/css/extensions.css?v=9.2.0",
-  "./assets/css/features.css?v=9.2.0",
-  "./assets/js/core.js?v=9.2.0",
-  "./assets/js/guides.data.js?v=9.2.0",
-  "./assets/js/features.js?v=9.2.0",
-  "./assets/js/app.js?v=9.2.0",
-  "./assets/icons/icon-192.png",
-  "./assets/icons/icon-512.png",
-  "./assets/images/embedded/064bbc1c753d038c.webp",
-  "./assets/images/embedded/12e1a0eafb2e178e.webp",
-  "./assets/images/embedded/59fd8fdea7ffe8b3.webp",
-  "./assets/images/embedded/7ed36904962e7ee0.webp",
-  "./assets/images/embedded/9301bd9b08d415d4.webp",
-  "./assets/images/embedded/9b96c365972365bb.webp",
-  "./assets/images/embedded/cce1de7b5a0e3e84.webp",
-  "./assets/images/embedded/d7fcaf1cb96df38b.webp",
-  "./assets/images/embedded/e0596c9029204be6.webp",
-  "./assets/images/embedded/eb6fd6208fac41d2.webp"
+  './','./index.html','./manifest.webmanifest',
+  './assets/css/base.css?v=9.3.0','./assets/css/portal.css?v=9.3.0','./assets/css/extensions.css?v=9.3.0','./assets/css/features.css?v=9.3.0','./assets/css/v93.css?v=9.3.0',
+  './assets/js/core.js?v=9.3.0','./assets/js/guides.data.js?v=9.3.0','./assets/js/features.js?v=9.3.0','./assets/js/app.js?v=9.3.0','./assets/js/v93.js?v=9.3.0',
+  './assets/icons/icon-192.png','./assets/icons/icon-512.png'
 ];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE_NAME).then(cache=>cache.addAll(APP_SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE_NAME).map(key=>caches.delete(key)))).then(()=>self.clients.claim()))});

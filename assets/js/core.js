@@ -1,8 +1,9 @@
 
 'use strict';
-const BUILD_ID='NEXUS_ARCHIVE_V9_2_QUALITY_FINAL_20260709';
+const BUILD_ID='NEXUS_ARCHIVE_V9_3_JINSEO_FINAL_20260709';
 const SUPABASE_URL='https://nfwkkbghelqhopgnguqp.supabase.co';
 const SUPABASE_KEY='sb_publishable_bXSthGxRHDFYy9p3fb21WQ_su8STJKq';
+const SUPABASE_CDN='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
 const DISPLAY_NAME='진서';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const nf=new Intl.NumberFormat('ko-KR'),pad=v=>String(v).padStart(2,'0'),money=v=>`${nf.format(Math.round(Number(v)||0))}원`;
@@ -14,6 +15,9 @@ function writeLocal(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){
 function createId(){return crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.random().toString(16).slice(2)}`}
 function emptyFinanceProfile(){return{cash_balance:0,bank_balance:0,savings_balance:0,loan_balance:0,card_due_balance:0}}
 function showToast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>el.classList.remove('show'),2600)}
+const nexusScriptLoads=new Map();
+function loadScriptOnce(src,id=''){if(id&&document.getElementById(id)&&window.Tesseract)return Promise.resolve();if(nexusScriptLoads.has(src))return nexusScriptLoads.get(src);const promise=new Promise((resolve,reject)=>{const script=document.createElement('script');if(id)script.id=id;script.src=src;script.async=true;script.onload=()=>resolve(script);script.onerror=()=>reject(new Error(`스크립트를 불러오지 못했습니다: ${src}`));document.head.appendChild(script)});nexusScriptLoads.set(src,promise);return promise.catch(error=>{nexusScriptLoads.delete(src);throw error})}
+function runWhenIdle(fn,timeout=1200){if('requestIdleCallback'in window)return requestIdleCallback(()=>fn(),{timeout});return setTimeout(fn,16)}
 
 const PLAYLISTS=[
 {id:'0mahINXJXQo',name:'감성',title:'감성 플레이리스트',desc:'차분하게 기록하거나 정리할 때 어울리는 플리.'},
