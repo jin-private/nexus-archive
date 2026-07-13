@@ -1,6 +1,6 @@
 
 'use strict';
-const BUILD_ID='NEXUS_ARCHIVE_V9_3_JINSEO_FINAL_20260709';
+const BUILD_ID='NEXUS_ARCHIVE_V10_PERSONAL_STOCK_OS_FINAL_20260713';
 const SUPABASE_URL='https://nfwkkbghelqhopgnguqp.supabase.co';
 const SUPABASE_KEY='sb_publishable_bXSthGxRHDFYy9p3fb21WQ_su8STJKq';
 const SUPABASE_CDN='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';

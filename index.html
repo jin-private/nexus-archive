@@ -11,11 +11,12 @@
 <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png"/>
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png"/>
 <script>try{const t=JSON.parse(localStorage.getItem('nexus-theme')||'"light"');document.documentElement.dataset.theme=t==='dark'?'dark':'light'}catch(_){}</script>
-<link rel="stylesheet" href="assets/css/base.css?v=9.3.0"/>
-<link rel="stylesheet" href="assets/css/portal.css?v=9.3.0"/>
-<link rel="stylesheet" href="assets/css/extensions.css?v=9.3.0"/>
-<link rel="stylesheet" href="assets/css/features.css?v=9.3.0"/>
-<link rel="stylesheet" href="assets/css/v93.css?v=9.3.0"/>
+<link rel="stylesheet" href="assets/css/base.css?v=10.0.1"/>
+<link rel="stylesheet" href="assets/css/portal.css?v=10.0.1"/>
+<link rel="stylesheet" href="assets/css/extensions.css?v=10.0.1"/>
+<link rel="stylesheet" href="assets/css/features.css?v=10.0.1"/>
+<link rel="stylesheet" href="assets/css/v93.css?v=10.0.1"/>
+<link rel="stylesheet" href="assets/css/v10.css?v=10.0.1"/>
 </head>
 <body>
 <div class="sidebarveil" onclick="toggleSidebar(false)"></div>
@@ -32,16 +33,16 @@
 
 
 <button class="navbtn active" data-page="home" onclick="navigate('home')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span>홈</button><button class="navbtn" data-page="stocks" onclick="navigate('stocks')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17 9 12l4 4 7-8"/><path d="M14 8h6v6"/></svg></span>주식 인텔리전스</button><button class="navbtn" data-page="finance" onclick="navigate('finance')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M4 9h16"/><path d="M8 4v6M16 4v6"/><path d="M8 14h3M8 17h6"/></svg></span>거래·재무 기록</button><button class="navbtn" data-page="fitness" onclick="navigate('fitness')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>운동·식단·인바디</button><button class="navbtn" data-page="guides" onclick="navigate('guides')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 9 9 0 0 0-9-9Z"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8Z"/></svg></span>원스휴먼 공략페이지</button><button class="navbtn" data-page="fivem" onclick="navigate('fivem')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 6-5 6 5 6M16 6l5 6-5 6M14 4l-4 16"/></svg></span>FiveM 개발실</button><button class="navbtn" data-page="system" onclick="navigate('system')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg></span>시스템 센터</button><button class="navbtn" data-page="playlist" onclick="navigate('playlist')"><span class="navico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5z"/><path d="m10 8 6 4-6 4Z"/></svg></span>플레이리스트</button></nav>
-<div class="sidefoot">NEXUS ARCHIVE V9.3<br/>진서의 자산·리서치·기록 통합 포털</div>
+<div class="sidefoot">NEXUS ARCHIVE V10.0<br/>진서의 자산·리서치·기록 통합 포털</div>
 </aside>
 <div class="workspace">
 <header class="topbar">
 <button aria-label="메뉴" class="mobilemenu" onclick="toggleSidebar()">☰</button>
 <div class="topsearch command-launch" role="search"><button class="topsearch-trigger" type="button" aria-label="NEXUS 검색 열기" onclick="runGlobalSearch()"><span aria-hidden="true">⌕</span></button><input autocomplete="off" aria-haspopup="dialog" id="globalSearch" onkeydown="if(event.key==='Enter'){event.preventDefault();runGlobalSearch()}" placeholder="NEXUS 검색" type="search"/><kbd>Ctrl K</kbd></div>
 <div class="topactions">
-<button aria-label="테마" class="iconbtn" id="themeToggle" onclick="toggleTheme()">☀</button>
+<button aria-label="NEXUS 알림" class="iconbtn alert-trigger" id="alertTrigger" onclick="toggleAlertDrawer()"><span>♢</span><b id="alertCount" hidden>0</b></button><button aria-label="테마" class="iconbtn" id="themeToggle" onclick="toggleTheme()">☀</button>
 <div class="userwrap"><button class="userbtn" id="userButton" onclick="handleUserButton()"><span class="avatar">진</span><span class="userlabel" id="userButtonLabel">로그인</span></button>
-<div class="panel usermenu" id="userMenu"><button onclick="navigate('mypage')">마이페이지</button><button onclick="signOut()">로그아웃</button></div>
+<div class="panel usermenu" id="userMenu"><button onclick="navigate('mypage')">마이페이지</button><button onclick="navigate('settings')">NEXUS 설정</button><button onclick="signOut()">로그아웃</button></div>
 </div>
 </div>
 </header>
@@ -61,7 +62,7 @@
 </div>
 <div class="portal-feature-actions">
 <button class="primary" onclick="navigate('stocks')">시장 흐름 보기</button>
-<button class="secondary" onclick="navigate('fivem')">FiveM 개발실</button>
+<button class="secondary" onclick="navigate('fivem')">FiveM 개발실</button><button class="secondary" onclick="openHomeEditor()">홈 편집</button>
 </div>
 </div>
 
@@ -161,6 +162,51 @@
 <div class="stockchatbox"><textarea id="stockQuestion" onkeydown="if(event.key==='Enter'&amp;&amp;!event.shiftKey){event.preventDefault();askStockResearch()}" placeholder="주식 관련 질문을 입력하세요."></textarea><button class="primary" id="stockAskButton" onclick="askStockResearch()">질문</button></div>
 <div class="stocksetup">Enter 전송 · Shift+Enter 줄바꿈 · 최근 공개 뉴스와 가격 흐름을 규칙 기반으로 정리한 리서치 보조 답변입니다.</div>
 </aside>
+</div>
+
+<div class="stock-os-shell" id="stockOsShell">
+<article class="panel stock-os-head">
+<div><div class="eyebrow">NEXUS STOCK OS</div><h2>진서님의 투자 판단 워크스페이스</h2><p>종목을 먼저 정확히 식별하고, 보유 이유·공시·뉴스·개인 메모를 같은 종목 방에서 비교합니다.</p></div>
+<div class="stock-os-actions"><button class="secondary" onclick="runStockRegressionTests()">주식 AI 자가진단</button><button class="primary" onclick="refreshSelectedStockRoom()">선택 종목 새로고침</button></div>
+</article>
+<div class="stock-os-grid">
+<aside class="panel stock-room-sidebar">
+<div class="sectionhead"><div><div class="eyebrow">RESEARCH ROOMS</div><h3>종목별 리서치 방</h3></div><button class="iconbtn small" onclick="createStockRoomFromPrompt()" title="리서치 방 추가">＋</button></div>
+<div id="stockRoomList" class="stock-room-list"><div class="empty">보유 종목을 등록하면 독립 리서치 방이 만들어집니다.</div></div>
+</aside>
+<section class="stack stock-os-main">
+<article class="panel stock-identity-card">
+<div class="sectionhead"><div><div class="eyebrow">SECURITY IDENTITY</div><h3 id="stockIdentityTitle">종목을 선택하세요</h3><p id="stockIdentityMeta">기업명·티커·거래소를 확정한 뒤 분석을 시작합니다.</p></div><span class="identity-status" id="stockIdentityStatus">미선택</span></div>
+<div class="identity-grid" id="stockIdentityGrid"><div><span>기업명</span><strong>-</strong></div><div><span>티커</span><strong>-</strong></div><div><span>시장</span><strong>-</strong></div><div><span>통화</span><strong>-</strong></div></div>
+</article>
+<article class="panel stock-financial-card">
+<div class="sectionhead"><div><div class="eyebrow">OFFICIAL FINANCIAL SNAPSHOT</div><h3>핵심 재무 스냅샷</h3><p>미국 종목은 SEC XBRL, 한국 종목은 OpenDART 설정 시 최근 공식 재무 항목을 확인합니다.</p></div><button class="secondary" onclick="refreshStockFinancials()">재무 확인</button></div>
+<div class="financial-snapshot-grid" id="stockFinancialSnapshot"><div class="empty">종목을 선택하고 재무 확인을 누르세요.</div></div>
+</article>
+<article class="panel thesis-card">
+<div class="sectionhead"><div><div class="eyebrow">INVESTMENT THESIS</div><h3>투자 논리 카드</h3><p>왜 샀는지와 언제 판단을 바꿀지를 먼저 적어두면, NEXUS가 새 근거와 대조합니다.</p></div><button class="primary" onclick="saveStockThesis()">투자 논리 저장</button></div>
+<div class="thesis-form">
+<label>매수 이유<textarea id="thesisRationale" placeholder="예: 신규 사업이 실제 매출로 연결될 가능성"></textarea></label>
+<label>상승 조건<textarea id="thesisCatalysts" placeholder="한 줄에 하나씩 입력"></textarea></label>
+<label>주요 위험<textarea id="thesisRisks" placeholder="한 줄에 하나씩 입력"></textarea></label>
+<label>논리 훼손 조건<textarea id="thesisInvalidation" placeholder="이 조건이 나타나면 판단을 다시 보기"></textarea></label>
+<div class="thesis-number-grid"><label>본전 가격<input id="thesisBreakeven" type="number" step="any"/></label><label>목표 가격<input id="thesisTarget" type="number" step="any"/></label><label>최대 허용 손실 %<input id="thesisMaxLoss" type="number" step="any"/></label><label>현재 상태<select id="thesisStatus"><option value="watch">관찰</option><option value="active">유효</option><option value="weakened">약화</option><option value="invalidated">훼손</option><option value="closed">종료</option></select></label></div>
+</div>
+</article>
+<article class="panel analyst-card">
+<div class="sectionhead"><div><div class="eyebrow">EVIDENCE-FIRST ANALYST</div><h3>NEXUS Analyst</h3><p>공시·가격·뉴스·진서님의 메모를 분리해 상승·하락·중립 시나리오로 답합니다.</p></div><span class="analyst-confidence" id="analystConfidence">근거 대기</span></div>
+<div class="analyst-question"><textarea id="stockOsQuestion" placeholder="예: 내가 적어둔 투자 논리 기준으로 지금 가장 위험한 부분은 뭐야?"></textarea><button class="primary" id="stockOsAskButton" onclick="askNexusAnalyst()">근거 분석</button></div>
+<div id="nexusAnalystResult" class="analyst-result"><div class="empty">종목 방을 선택하고 질문하면 근거 우선 분석이 표시됩니다.</div></div><div class="room-history-head"><strong>이 종목의 최근 질문</strong><button class="textbtn" onclick="clearStockRoomHistory()">대화 기록 비우기</button></div><div class="stock-room-history" id="stockRoomHistory"><div class="empty">선택 종목의 질문 기록이 여기에 따로 저장됩니다.</div></div>
+</article>
+</section>
+<aside class="stack stock-os-side">
+<article class="panel note-card"><div class="eyebrow">MY RESEARCH NOTES</div><h3>리서치 노트</h3><input id="stockNoteTitle" placeholder="노트 제목"/><textarea id="stockNoteContent" placeholder="공시를 보고 느낀 점, 걱정되는 부분, 확인할 질문"></textarea><div class="note-actions"><select id="stockNoteType"><option value="note">개인 메모</option><option value="filing">공시 메모</option><option value="news">뉴스 메모</option><option value="decision">매매 판단</option></select><button class="primary" onclick="saveStockResearchNote()">노트 저장</button></div><div id="stockNoteList" class="stock-note-list"><div class="empty">선택 종목의 노트가 표시됩니다.</div></div></article>
+<article class="panel event-card"><div class="sectionhead"><div><div class="eyebrow">DISCLOSURE & EVENTS</div><h3>공시·이벤트 타임라인</h3></div><button class="secondary" onclick="refreshStockEvents()">공시 확인</button></div><div id="stockEventTimeline" class="event-timeline"><div class="empty">SEC 공시는 바로 확인하고, OpenDART는 선택 설정 시 확인합니다.</div></div></article>
+<article class="panel macro-card"><div class="sectionhead"><div><div class="eyebrow">MARKET CONTEXT</div><h3>시장 환경</h3></div><button class="secondary" onclick="refreshMacroContext()">시장 확인</button></div><div class="macro-context-grid" id="macroContextGrid"><div class="empty">금리·지수·환율 흐름을 확인하면 종목 자체 근거와 시장 환경을 분리해서 볼 수 있어요.</div></div></article>
+<article class="panel review-card"><div class="sectionhead"><div><div class="eyebrow">INVESTMENT REVIEW</div><h3>이번 달 투자 복기</h3></div><button class="secondary" onclick="openQuickRecord('stock-note')">판단 기록</button></div><div class="investment-review-grid" id="investmentReviewGrid"><div class="empty">투자 논리와 판단 메모를 저장하면 이번 달 복기를 정리합니다.</div></div></article>
+<article class="panel risk-card"><div class="eyebrow">PORTFOLIO RISK</div><h3>포트폴리오 위험 엔진</h3><div id="portfolioRiskGrid" class="portfolio-risk-grid"><div class="empty">보유 종목과 매수가·수량을 입력하면 집중도와 손실 시나리오를 계산합니다.</div></div><div class="scenario-controls"><label>전체 가격 충격 %<input id="portfolioShock" type="number" value="-20" step="1"/></label><button class="secondary" onclick="renderPortfolioRisk()">시나리오 계산</button></div></article>
+</aside>
+</div>
 </div>
 </section>
 <section class="page" id="page-finance">
@@ -268,6 +314,11 @@ vrp_music    0.08 ms    11.2 MiB"></textarea><div class="formactions"><button cl
 <div class="fivem-note-actions"><button class="primary" onclick="saveFiveMWorkNotes()">작업 메모 저장</button><button class="secondary" onclick="clearFiveMWorkNotes()">메모 지우기</button></div>
 <div class="fivem-note-status" id="fivemWorkHint">server.cfg와 스크립트 점검 결과를 같이 보면서 수정 순서를 적어두면 작업 흐름을 유지하기 쉬워요.</div>
 </article>
+
+<article class="panel contentcard fivem-wide fivem-project-lab" id="fivemProjectLab">
+<div class="sectionhead"><div><div class="eyebrow">FIVEM PROJECT WORKSPACE</div><h2>프로젝트별 작업 이력</h2><p>리소스 검사·resmon·profiler 결과를 프로젝트에 묶고 수정 전후 성능을 비교합니다.</p></div><button class="primary" onclick="createFiveMProject()">프로젝트 추가</button></div>
+<div class="fivem-project-layout"><div id="fivemProjectList" class="fivem-project-list"><div class="empty">Music-Pack 같은 프로젝트를 추가해 보세요.</div></div><div class="fivem-project-detail"><div id="fivemProjectSummary" class="empty">프로젝트를 선택하면 검사 이력과 개선률이 표시됩니다.</div><div id="fivemRunHistory" class="fivem-run-history"></div></div></div>
+</article>
 </div>
 </section>
 <section class="page" id="page-guides">
@@ -279,7 +330,7 @@ vrp_music    0.08 ms    11.2 MiB"></textarea><div class="formactions"><button cl
 <section class="page" id="page-guide-detail"><div class="detailshell" id="guideDetail"></div></section>
 <section class="page" id="page-system">
 <article class="panel pagehead system-pagehead"><div><div class="eyebrow">NEXUS SYSTEM CENTER</div><h1>시스템 센터</h1><p>NEXUS 연결 상태, 기능 자가진단, 체감 성능, 백업·복구까지 개발자 콘솔 없이 관리합니다.</p></div><div class="pageactions"><button class="primary" onclick="runSystemHealthCheck()">전체 상태 점검</button><button class="secondary" onclick="runNexusDiagnostics()">기능 자가진단</button><button class="secondary" onclick="measureNexusPerformance()">성능 측정</button></div></article>
-<div class="system-overview panel"><div><div class="eyebrow">SYSTEM HEALTH</div><h2>현재 NEXUS 상태</h2><p id="systemHealthNote">점검 버튼을 누르면 현재 브라우저와 연결 상태를 확인합니다.</p></div><div class="system-build"><span>BUILD</span><strong id="systemBuildId">V9.3 JINSEO</strong><small id="systemLastCheck">아직 점검하지 않음</small></div></div>
+<div class="system-overview panel"><div><div class="eyebrow">SYSTEM HEALTH</div><h2>현재 NEXUS 상태</h2><p id="systemHealthNote">점검 버튼을 누르면 현재 브라우저와 연결 상태를 확인합니다.</p></div><div class="system-build"><span>BUILD</span><strong id="systemBuildId">V10 PERSONAL OS</strong><small id="systemLastCheck">아직 점검하지 않음</small></div></div>
 <div class="system-health-grid" id="systemHealthGrid"><div class="empty">전체 상태 점검을 실행하면 Supabase·세션·Finance·stock-ai·OCR·PWA·브라우저 저장소 상태가 표시됩니다.</div></div>
 <article class="panel contentcard diagnostics-card"><div class="sectionhead"><div><div class="eyebrow">NEXUS REGRESSION TEST</div><h2>기능 자가진단</h2><p>공략 데이터, OCR parser, InBody parser, 통합 검색, Finance 중복 비교 같은 핵심 기능을 버튼 한 번으로 검사합니다.</p></div><button class="primary" onclick="runNexusDiagnostics()">자가진단 실행</button></div><div class="diagnostics-grid" id="nexusDiagnosticsGrid"><div class="empty">기능 자가진단을 실행하면 PASS/WARN/FAIL 결과가 표시됩니다.</div></div></article>
 <article class="panel contentcard performance-card"><div class="sectionhead"><div><div class="eyebrow">NEXUS PERFORMANCE</div><h2>실제 체감 성능</h2><p>현재 브라우저의 로딩·클릭 반응·레이아웃 안정성·JS 오류를 측정하고 최근 평균과 비교합니다.</p></div><button class="primary" onclick="measureNexusPerformance()">성능 측정</button></div><div class="performance-grid" id="nexusPerformanceGrid"><div class="empty">성능 측정을 실행하면 현재 페이지의 체감 지표가 표시됩니다.</div></div></article>
@@ -291,17 +342,37 @@ vrp_music    0.08 ms    11.2 MiB"></textarea><div class="formactions"><button cl
 </section>
 <section class="page" id="page-playlist"><article class="panel pagehead"><div><div class="eyebrow">NEXUS PLAYLIST</div><h1>플레이리스트</h1><p>6개의 YouTube iframe 플레이리스트와 페이지 이동 중 유지되는 우측 하단 미니 플레이어입니다.</p></div></article><div class="playgrid" id="playlistGrid"></div></section>
 <section class="page" id="page-mypage"><article class="panel pagehead"><div><div class="eyebrow">MY NEXUS</div><h1>마이페이지</h1><p>Finance와 충돌하지 않는 localStorage 프로필 초안입니다. 향후 Supabase 사용자 프로필 테이블로 확장할 수 있는 필드 구조를 유지합니다.</p></div></article><div class="profilegrid"><article class="panel profilecard"><div class="fieldgrid"><div class="field"><label>이름</label><input id="profileName" type="text"/></div><div class="field"><label>키(cm)</label><input id="profileHeight" type="number"/></div><div class="field"><label>현재 체중(kg)</label><input id="profileWeight" step="0.1" type="number"/></div><div class="field"><label>목표 체중(kg)</label><input id="profileTargetWeight" step="0.1" type="number"/></div><div class="field fullfield"><label>간단한 자기 메모</label><textarea id="profileMemo"></textarea></div><div class="field"><label>월 자산 목표</label><input id="profileAssetGoal" type="number"/></div><div class="field"><label>월 지출 목표</label><input id="profileSpendingGoal" type="number"/></div></div><div class="formactions"><button class="primary" onclick="saveMyProfile()">프로필 초안 저장</button></div></article><aside class="panel profilepreview"><div class="profileavatar">진</div><h2 id="profilePreviewName">진서</h2><p id="profilePreviewMemo" style="color:var(--text2);font-size:12px">NEXUS ARCHIVE 사용자</p><div class="assetlines"><div class="assetline"><span>월 자산 목표</span><strong id="profilePreviewAsset">0원</strong></div><div class="assetline"><span>월 지출 목표</span><strong id="profilePreviewSpend">0원</strong></div></div></aside></div></section>
+
+<section class="page" id="page-settings">
+<article class="panel pagehead"><div><div class="eyebrow">PERSONAL WORKSPACE</div><h1>NEXUS 설정</h1><p>홈 배치, 화면 밀도, 데이터 동기화, 알림 기준과 사용하지 않는 기능을 진서님 방식으로 맞춥니다.</p></div><div class="pageactions"><button class="primary" onclick="saveNexusSettings()">설정 저장</button></div></article>
+<div class="settings-grid">
+<article class="panel contentcard"><div class="eyebrow">HOME LAYOUT</div><h2>홈 카드 구성</h2><p class="dev-copy">표시할 카드와 순서를 조정합니다. 위·아래 버튼으로 우선순위를 바꿀 수 있어요.</p><div id="settingsHomeCards" class="settings-sort-list"></div></article>
+<article class="panel contentcard"><div class="eyebrow">DISPLAY</div><h2>화면 밀도·표시</h2><div class="settings-fields"><label>화면 밀도<select id="settingsDensity"><option value="comfortable">편안하게</option><option value="default">기본</option><option value="compact">촘촘하게</option></select></label><label>기본 시작 페이지<select id="settingsStartPage"><option value="home">홈</option><option value="stocks">주식 인텔리전스</option><option value="finance">거래·재무 기록</option><option value="fitness">운동·식단·인바디</option><option value="fivem">FiveM 개발실</option></select></label><label class="toggle-row"><input id="settingsReducedMotion" type="checkbox"/> 애니메이션 줄이기</label><label class="toggle-row"><input id="settingsAutoRefreshStocks" type="checkbox"/> 홈·주식 페이지에서 보유 종목 자동 갱신</label></div></article>
+<article class="panel contentcard"><div class="eyebrow">MENU VISIBILITY</div><h2>사이드바 메뉴 표시</h2><p class="dev-copy">평소 쓰지 않는 메뉴는 숨기고 Ctrl+K 통합 검색에서는 계속 열 수 있어요.</p><div class="menu-visibility-grid" id="settingsMenuVisibility"></div></article>
+<article class="panel contentcard"><div class="eyebrow">SYNC</div><h2>기기 간 동기화</h2><p class="dev-copy">원스휴먼 체크·보유 종목·FiveM 작업·홈 설정을 로그인 계정으로 통합합니다.</p><div id="settingsSyncState" class="sync-state">로그인 후 동기화 상태를 확인합니다.</div><div class="formactions"><button class="secondary" onclick="syncPersonalWorkspace(true)">지금 동기화</button><button class="secondary" onclick="exportNexusBackup()">전체 백업</button></div></article>
+<article class="panel contentcard"><div class="eyebrow">ALERT RULES</div><h2>NEXUS 알림 기준</h2><div class="settings-fields"><label>주가 변동 알림 %<input id="settingsStockMove" type="number" min="1" value="10"/></label><label>운동 미기록 일수<input id="settingsWorkoutGap" type="number" min="1" value="5"/></label><label>지출 목표 알림 %<input id="settingsSpendingThreshold" type="number" min="10" max="100" value="80"/></label><label class="toggle-row"><input id="settingsSystemAlert" type="checkbox" checked/> 자가진단·동기화 오류 알림</label></div></article>
+<article class="panel contentcard"><div class="eyebrow">TRASH & DRAFTS</div><h2>휴지통·임시 저장</h2><p class="dev-copy">최근 30일 삭제 기록을 복원하고 작성 중인 메모 초안을 관리합니다.</p><div id="trashList" class="trash-list"><div class="empty">휴지통이 비어 있습니다.</div></div><div class="formactions"><button class="danger-soft" onclick="emptyNexusTrash()">휴지통 비우기</button></div></article>
+<article class="panel contentcard"><div class="eyebrow">ONCE HUMAN FRESHNESS</div><h2>공략 업데이트 관리</h2><p class="dev-copy">15개 공략의 마지막 확인일과 개인 메모를 관리합니다.</p><div id="guideFreshnessList" class="guide-freshness-list"></div></article>
+</div>
+</section>
 </main>
 </div>
 <div class="miniplayer" id="miniPlayer"><div class="minitop"><div><strong id="miniTitle">플레이리스트</strong><div class="minidesc">페이지 이동 중에도 재생 영역이 유지됩니다.</div></div><div class="minicontrols"><button onclick="openCurrentPlaylist()" title="플레이리스트 페이지">↗</button><button id="miniToggle" onclick="toggleMiniPlayer()" title="최소화">−</button><button onclick="closeMiniPlayer()" title="닫기">×</button></div></div><div class="miniembed"><iframe allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen="" id="miniIframe" title="NEXUS 미니 플레이어"></iframe></div></div>
 <div class="command-palette" id="commandPalette" aria-hidden="true"><div class="command-backdrop" onclick="closeCommandPalette()"></div><section class="command-dialog" role="dialog" aria-modal="true" aria-labelledby="commandTitle"><div class="command-search"><span>⌕</span><input id="commandSearchInput" autocomplete="off" placeholder="메뉴, 공략, 용어, 종목, FiveM 도구 검색" oninput="queueCommandSearch(this.value)"/><kbd>ESC</kbd></div><div class="command-meta"><strong id="commandTitle">NEXUS 통합 검색</strong><span id="commandMetaHint">Ctrl+K · ↑↓ 이동 · Enter 열기</span></div><div class="command-results" id="commandResults"></div></section></div>
 <div class="authmodal" id="authModal" onclick="closeAuthModal(event)"><article class="panel modalcard" onclick="event.stopPropagation()"><div class="modaltop"><div><div class="eyebrow">PRIVATE ACCOUNT</div><h2>NEXUS 로그인</h2></div><button class="closebtn" onclick="closeAuthModal()">×</button></div><div class="authform"><input autocomplete="email" id="loginEmail" onkeydown="if(event.key==='Enter'){event.preventDefault();document.getElementById('loginPassword').focus()}" placeholder="이메일" type="email"/><input autocomplete="current-password" id="loginPassword" onkeydown="if(event.key==='Enter'){event.preventDefault();signIn()}" placeholder="비밀번호" type="password"/><button class="primary" onclick="signIn()">로그인</button></div><div class="authmessage" id="authMessage">Supabase 이메일/비밀번호 계정으로 로그인합니다.</div></article></div>
 <div class="overlay" id="glossaryOverlay" onclick="closeGlossary(event)"><article class="panel glosspanel" onclick="event.stopPropagation()"><div class="modaltop"><div><div class="eyebrow">TERM HELP · 초보자 세부 안내</div><h2 id="glossaryTitle"></h2></div><button class="closebtn" onclick="closeGlossary()">×</button></div><div class="glossary-layout"><div class="glossary-visual" id="glossaryVisual"></div><div class="glossary-copy"><p id="glossarySummary"></p><div class="keysteps" id="glossarySteps"></div><div class="glossary-example" id="glossaryExample"></div><div class="glossary-note" id="glossaryNote"></div></div></div></article></div>
+
+<button class="quick-record-fab" id="quickRecordFab" onclick="openQuickRecord()" aria-label="빠른 기록" title="빠른 기록 · Alt+Q">＋</button>
+<aside class="alert-drawer" id="alertDrawer" aria-hidden="true"><div class="alert-drawer-head"><div><div class="eyebrow">NEXUS ALERTS</div><h2>알림함</h2></div><button class="closebtn" onclick="toggleAlertDrawer(false)">×</button></div><div id="alertList" class="alert-list"><div class="empty">확인할 알림이 없습니다.</div></div><button class="secondary full" onclick="markAllAlertsRead()">모두 읽음</button></aside>
+<div class="overlay" id="quickRecordOverlay" onclick="closeQuickRecord(event)"><article class="panel quick-record-modal" onclick="event.stopPropagation()"><div class="modaltop"><div><div class="eyebrow">QUICK RECORD</div><h2>빠른 기록</h2></div><button class="closebtn" onclick="closeQuickRecord()">×</button></div><div class="quick-record-tabs" id="quickRecordTabs"></div><div id="quickRecordForm"></div></article></div>
+<div class="overlay" id="homeEditorOverlay" onclick="closeHomeEditor(event)"><article class="panel home-editor-modal" onclick="event.stopPropagation()"><div class="modaltop"><div><div class="eyebrow">HOME CUSTOMIZE</div><h2>홈 카드 편집</h2></div><button class="closebtn" onclick="closeHomeEditor()">×</button></div><p class="dev-copy">자주 보는 카드만 남기고 순서를 조정하세요.</p><div id="homeEditorList" class="settings-sort-list"></div><div class="formactions"><button class="secondary" onclick="resetHomeLayout()">기본값</button><button class="primary" onclick="applyHomeEditor()">홈에 적용</button></div></article></div>
+<div class="undo-bar" id="undoBar" aria-live="polite"><span id="undoMessage">삭제했습니다.</span><button onclick="undoLastDelete()">되돌리기</button></div>
 <div class="toast" id="toast"></div>
-<script defer src="assets/js/core.js?v=9.3.0"></script>
-<script defer src="assets/js/guides.data.js?v=9.3.0"></script>
-<script defer src="assets/js/features.js?v=9.3.0"></script>
-<script defer src="assets/js/app.js?v=9.3.0"></script>
-<script defer src="assets/js/v93.js?v=9.3.0"></script>
+<script defer src="assets/js/core.js?v=10.0.1"></script>
+<script defer src="assets/js/guides.data.js?v=10.0.1"></script>
+<script defer src="assets/js/features.js?v=10.0.1"></script>
+<script defer src="assets/js/app.js?v=10.0.1"></script>
+<script defer src="assets/js/v93.js?v=10.0.1"></script>
+<script defer src="assets/js/v10.js?v=10.0.1"></script>
 </body>
 </html>

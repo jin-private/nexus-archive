@@ -20,7 +20,7 @@ function parseInbody650Text(text=''){const current=sectionBeforeHistory(text),hi
 /* NEXUS_PARSER_CORE_END */
 
 
-const PROTECTED_PAGES=new Set(['finance','fitness','mypage']);
+const PROTECTED_PAGES=new Set(['finance','fitness','mypage','settings']);
 function routeUrl(state){if(state.page==='guide-detail'&&state.guideId)return`#guide/${encodeURIComponent(state.guideId)}`;return`#${state.page||'home'}`}
 function parseRoute(){const hash=location.hash.replace(/^#/,'');if(hash.startsWith('guide/')){const id=decodeURIComponent(hash.slice(6));return guidesById[id]?{page:'guide-detail',guideId:id}:{page:'guides'}}const page=hash||'home';return $(`#page-${page}`)?{page}:{page:'home'}}
 function navigate(page,options={}){const target={page,guideId:options.guideId||null};if(PROTECTED_PAGES.has(page)&&!app.user){app.pendingRoute=target;openAuthModal();return false}showRoute(target);if(options.replace)history.replaceState(target,'',routeUrl(target));else history.pushState(target,'',routeUrl(target));return true}
@@ -186,7 +186,7 @@ function removeOwnedStock(id){app.ownedStocks=app.ownedStocks.filter(x=>x.id!==i
 function clearOwnedStockTimer(){if(app.ownedStockTimer){clearInterval(app.ownedStockTimer);app.ownedStockTimer=null}}
 function scheduleOwnedStockRefresh(){clearOwnedStockTimer();if(!['stocks','home'].includes(app.currentPage)||!app.ownedStocks.length)return;app.ownedStockTimer=setInterval(()=>{if(['stocks','home'].includes(app.currentPage))refreshOwnedStocks()},60000)}
 
-function currentWeekWorkoutCount(){const since=new Date();since.setDate(since.getDate()-6);since.setHours(0,0,0,0);return app.fitnessRecords.filter(r=>r.kind==='workout'&&new Date(r.date)>=since).length}
+function currentWeekWorkoutCount(){const since=new Date();since.setDate(since.getDate()-6);since.setHours(0,0,0,0);return app.fitnessRecords.filter(r=>(r.type||r.kind||r.record_type)==='workout'&&new Date(`${r.date||r.record_date}T12:00:00`)>=since).length}
 function inspectFiveMCfg(){
   const input=$('#fivemCfgInput');if(!input)return;const raw=input.value||'',lines=raw.split(/\r?\n/),active=lines.map((line,index)=>({line:index+1,text:line.trim()})).filter(x=>x.text&&!x.text.startsWith('#')&&!x.text.startsWith('//'));
   const ensures=active.map(x=>{const m=x.text.match(/^(?:ensure|start)\s+([^\s#]+)/i);return m?{name:m[1],line:x.line}:null}).filter(Boolean),lower=ensures.map(x=>x.name.toLowerCase()),duplicates=[...new Set(lower.filter((name,i)=>lower.indexOf(name)!==i))];

@@ -1,7 +1,7 @@
 {
   "name": "NEXUS ARCHIVE",
   "short_name": "NEXUS",
-  "description": "진서의 개인 자산·리서치·기록 통합 포털",
+  "description": "진서의 개인 자산·건강·FiveM·근거 중심 주식 리서치 통합 포털",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
